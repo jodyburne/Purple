@@ -1,25 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import styled from 'styled-components';
+import Home from './pages/Home';
+import NewEmployee from './pages/NewEmployee';
+import Team from './pages/Team';
+import Error from './pages/Error';
+import Footer from './components/Footer';
+
+const Test = styled.div`
+  position: relative;
+  min-height: 100vh;
+  ::after {
+    content: '';
+    display: block;
+    height: 500px;
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Test className="App">
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/team" component={Team} />
+          <Route path="/newemployee" component={NewEmployee} />
+          <Route component={Error} />
+        </Switch>
+      <Footer />
+    </Test>
   );
 }
 

@@ -1,17 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import employeeApp from './reducers';
+import initalState from './mockData';
+// import { addEmployee, editEmployee, deleteEmployee } from './actions';
+
+const store = createStore(employeeApp, initalState);
+
+// to test redux is working
+// console.log(store.getState())
+// const unsubscribe = store.subscribe(() => console.log(store.getState()))
+// store.dispatch(addEmployee({name: 'leandro', employeeId: 12}))
+// store.dispatch(addEmployee({name: 'leandro', employeeId: 44}))
+// store.dispatch(editEmployee({name: 'jody', employeeId: 44}))
+// store.dispatch(deleteEmployee(44))
+// unsubscribe()
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
