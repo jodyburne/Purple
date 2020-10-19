@@ -102,7 +102,7 @@ function EmployeeCard({ employee, handleDelete, handleOpen }) {
                         alt="profile pic"/>
                     <div>
                         <Name>{ name }</Name>
-                        <Label>Employee ID:{'  '}{'  '}</Label>
+                        <Label>Employee ID: </Label>
                         <DetailsText>{id}</DetailsText>
                     </div>
                 </UserHeaderContainer>

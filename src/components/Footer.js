@@ -18,7 +18,6 @@ const InfoContainer = styled.div`
     position: absolute;
     z-index: 1;
     top: 15%;
-    left: 20%;
     display: flex;
     border-bottom: 1px solid white;
     padding: 20px; 
@@ -63,7 +62,10 @@ const Icon = styled(FontAwesomeIcon)`
 const CreditsContainer = styled.div`
     position: absolute;
     top: 72%;
-    left: 45%;
+    display: flex;
+    justify-content: center;
+    border: 1px red solid;
+
 `;
 
 const FooterCircles = styled.img`
@@ -80,6 +82,11 @@ const FooterCurve = styled.img`
     width: 100%;
 `;
 
+const FooterContent = styled.div`
+    display: flex;
+    justify-content: center;
+`;
+
 function Footer() {
     let location = useLocation();
     const { pathname } = location;
@@ -94,47 +101,49 @@ function Footer() {
                 alt="circles"
                 home={home} 
                 src="/images/circle-footer.png" />
-            <InfoContainer>
-                <LeftInfoContainer>
-                    <Logo 
-                        alt="logo" 
-                        src="/images/logo.png" />
-                    <InfoText>Me old mucker Harry don't get shirty with me he nicked it up the kyver gutted mate spend a penny, bloke my good sir in my flat bleeding quaint! </InfoText>
-                    <div>
-                        <Icon icon={faFacebookF} />
-                        <Icon icon={faTwitter} />
-                        <Icon icon={faDribbble} />
-                        <Icon icon={faLinkedinIn} />
-                    </div>
-                </LeftInfoContainer>
-                <Column>
-                    <InfoSubheading>Company</InfoSubheading>
-                    <InfoText>Home</InfoText>
-                    <InfoText>Features</InfoText>
-                    <InfoText>Screenshots</InfoText>
-                    <InfoText>Pricing</InfoText>
-                    <InfoText>Team</InfoText>
-                </Column>
-                <Column>
-                    <InfoSubheading>Help</InfoSubheading>
-                    <InfoText>Help Center</InfoText>
-                    <InfoText>FAQ's</InfoText>
-                    <InfoText>Terms & Conditions</InfoText>
-                    <InfoText>Privacy</InfoText>
-                    <InfoText>Contacts</InfoText>
-                </Column>
-                <Column>
-                    <InfoSubheading>Solutions</InfoSubheading>
-                    <InfoText>Consumer</InfoText>
-                    <InfoText>Saas</InfoText>
-                    <InfoText>Education</InfoText>
-                    <InfoText>Gaming</InfoText>
-                    <InfoText>Financial Services</InfoText>
-                </Column>
-            </InfoContainer>
-            <CreditsContainer>
-                <InfoText>© indianpix | All rights reserved 2019</InfoText>
-            </CreditsContainer>   
+            <FooterContent>
+                <InfoContainer>
+                    <LeftInfoContainer>
+                        <Logo 
+                            alt="logo" 
+                            src="/images/logo.png" />
+                        <InfoText>Me old mucker Harry don't get shirty with me he nicked it up the kyver gutted mate spend a penny, bloke my good sir in my flat bleeding quaint! </InfoText>
+                        <div>
+                            <Icon icon={faFacebookF} />
+                            <Icon icon={faTwitter} />
+                            <Icon icon={faDribbble} />
+                            <Icon icon={faLinkedinIn} />
+                        </div>
+                    </LeftInfoContainer>
+                    <Column>
+                        <InfoSubheading>Company</InfoSubheading>
+                        <InfoText>Home</InfoText>
+                        <InfoText>Features</InfoText>
+                        <InfoText>Screenshots</InfoText>
+                        <InfoText>Pricing</InfoText>
+                        <InfoText>Team</InfoText>
+                    </Column>
+                    <Column>
+                        <InfoSubheading>Help</InfoSubheading>
+                        <InfoText>Help Center</InfoText>
+                        <InfoText>FAQ's</InfoText>
+                        <InfoText>Terms & Conditions</InfoText>
+                        <InfoText>Privacy</InfoText>
+                        <InfoText>Contacts</InfoText>
+                    </Column>
+                    <Column>
+                        <InfoSubheading>Solutions</InfoSubheading>
+                        <InfoText>Consumer</InfoText>
+                        <InfoText>Saas</InfoText>
+                        <InfoText>Education</InfoText>
+                        <InfoText>Gaming</InfoText>
+                        <InfoText>Financial Services</InfoText>
+                    </Column>
+                </InfoContainer>
+                <CreditsContainer>
+                    <InfoText>© indianpix | All rights reserved 2019</InfoText>
+                </CreditsContainer>   
+            </FooterContent>
             <FooterCurve 
                 alt="curve"
                 src='/images/curve-1.png' />
