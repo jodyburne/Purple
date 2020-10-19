@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 const Button = styled.button`
     font-family: inherit;
     border: none;
+    cursor: pointer;
     ${({ light }) =>
     light ?
     css`
@@ -22,18 +23,16 @@ const Button = styled.button`
         border-radius: 40px;
         font-size: 18px;
         box-shadow: 3px 10px 10px 5px #e8e8e8;
-    `} 
+    `};
 `;
-// home enter - light - 220 x 60
-// dark submit, home learn more 200 x 50
-// nav btn - light 135 x 40
 
 function PillButton({ text, light, callback }) {
     return (
         <div>
             <Button 
                 onClick={callback}
-                light={light}>{text}</Button>
+                light={light}>{text}
+            </Button>
         </div>
     );
 }

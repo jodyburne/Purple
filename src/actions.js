@@ -17,7 +17,6 @@ export function editEmployee(employee) {
 }
 
 export function deleteEmployee(id) {
-    console.log(id)
     return {
         type: DELETE_EMPLOYEE,
         id

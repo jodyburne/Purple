@@ -29,20 +29,20 @@ const InputContainer = styled.div`
     padding: 10px 50px;
     align-items: center;
     box-sizing: border-box;
+    background-color: white;
 `;
 
 const SmallInputGroupContainer = styled.div`
-@media (max-width: 1200px) {
-    width: 620px;
-};
-@media (min-width: 1200px) {
-    width: 1160px;
-};
+    @media (max-width: 1200px) {
+        width: 620px;
+    };
+    @media (min-width: 1200px) {
+        width: 1160px;
+    };
     display: flex;
     flex-flow: wrap;
     justify-content: space-between;
     margin-bottom: 75px;
-
 `;
 
 const Input = styled.input`
@@ -73,10 +73,9 @@ const Form = styled.form`
 
 const Error = styled.p`
     color: #5851EA;
-`
+`;
 
 function NewEmployeeForm({ initValues, closeModal }) {
-
     const [ formValues, setFormValues ] = useState({
         id: Math.floor(Math.random() * 1000000),
         dob: '',
@@ -88,22 +87,21 @@ function NewEmployeeForm({ initValues, closeModal }) {
     });
 
     useEffect(() => {
-        console.log(initValues)
         if (initValues) {
             const { id, dob, address, status, position, created, updated, name } = initValues;
             setFormValues({
-                id,
-                dob,
-                address,
-                status,
-                position,
-                created,
-                updated,
-            })
+                id: id ? id : '',
+                dob: dob ? dob : '',
+                address: address ? address : '',
+                status: status ? status : '',
+                position: position ? position : '',
+                created: created ? created : '',
+                updated: updated ? updated : '',
+            });
             setName(name);
         }
-    }, [])
-
+    }, [initValues]);
+ 
     const [ name, setName ] = useState('');
     const [ error, setError ] = useState(false);
 
@@ -113,19 +111,18 @@ function NewEmployeeForm({ initValues, closeModal }) {
     const handleChange = e => {
         const { target } = e;
         const { name, value } = target;  
-        setFormValues(formValues => ({ ...formValues, [name]: value }))  
+        setFormValues(formValues => ({ ...formValues, [name]: value }));
     }
 
     const handleNameChange = e => {
         const { target } = e;
         const { value } = target;  
-        setName(value)  
+        setName(value);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
         if (name === '') {
-            console.log('hi')
             setError(true);
             return;
         }

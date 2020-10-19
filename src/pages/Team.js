@@ -30,11 +30,33 @@ const Backdrop = styled.div`
 `;
 
 const SubHeading = styled.p`
-text-align: center;
-font-weight: 600;
-color: #5851EA;
-font-size: 35px;
-margin 30px auto 0;
+    text-align: center;
+    font-weight: 600;
+    color: #5851EA;
+    font-size: 35px;
+    margin 30px auto 0;
+`;
+
+export const SquareOne = styled.img`
+    position: absolute;
+    top: 250px;
+    left: 250px;
+`;
+
+export const SquareTwo = styled.img`
+    position: absolute;
+    top: 350px;
+    right: 150px;
+    transform: rotate(225deg);
+`;
+
+const SquareThree = styled.div`
+    width: 55px;
+    height: 55px;
+    background-color: #ffa7b6;
+    margin: 50px 0 75px 250px;
+    transform: rotate(75deg);
+
 `;
 
 function Team() {
@@ -57,19 +79,24 @@ function Team() {
                 </ModalContainer>   
             }
             <Backdrop modal={open}>
-            <Header>Team</Header>
-            <CardsContainer>
-                {employees.map(el => (
-                    <EmployeeCard 
-                        key={el.id}
-                        employee={el}
-                        handleOpen={() => {
-                            setInitValues(el)
-                            setOpen(true)}
-                        }
-                        handleDelete={() => deleteCallback(el.id)} />
-                ))}
-            </CardsContainer>
+                <SquareOne alt="square" src="/images/el-1.png" />
+                <SquareTwo alt="square" src="/images/el-1.png" />
+                <Header>Team</Header>
+                <CardsContainer>
+                    {employees.map(el => (
+                        <EmployeeCard 
+                            key={el.id}
+                            employee={el}
+                            handleOpen={() => {
+                                setInitValues(el)
+                                setOpen(true)}
+                            }
+                            handleDelete={() => deleteCallback(el.id)} />
+                    ))}
+                </CardsContainer>
+                <div>
+                    <SquareThree />
+                </div>
             </Backdrop>
         </Container>
     );

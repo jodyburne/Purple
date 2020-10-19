@@ -1,10 +1,14 @@
 import React from 'react';
+import Navbar from '../components/NavBar';
+import { Header } from './NewEmployee';
 
-export default function Error() {
+function Error() {
     return (
         <div>
-            <h1>The page you are looking for does not exist</h1>
+            <Navbar />
+            <Header>The page you are looking for does not exist</Header>
         </div>
     );
+}
 
-};
+export default Error;

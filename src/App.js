@@ -7,19 +7,19 @@ import Team from './pages/Team';
 import Error from './pages/Error';
 import Footer from './components/Footer';
 
-const Test = styled.div`
+const AppContainer = styled.div`
   position: relative;
   min-height: 100vh;
   ::after {
     content: '';
     display: block;
     height: 500px;
-  }
+  };
 `;
 
 function App() {
-  return (
-    <Test className="App">
+    return (
+    <AppContainer >
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/team" component={Team} />
@@ -27,7 +27,7 @@ function App() {
           <Route component={Error} />
         </Switch>
       <Footer />
-    </Test>
+    </AppContainer>
   );
 }
 

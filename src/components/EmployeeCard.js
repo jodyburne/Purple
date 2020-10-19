@@ -8,6 +8,7 @@ const CardContainer = styled.div`
     height: 350px;
     margin: 40px;
     box-shadow: 2px 3px 3px 3px #fafafa;
+    background-color: white;
 `;
 
 const UpperContainer = styled.div`
@@ -30,7 +31,6 @@ const UserHeaderContainer = styled.div`
     display: flex;
     align-items: center; 
     width: 50%;
-  
 `;
 
 const IconContainer = styled.div`
@@ -79,12 +79,14 @@ const CrossIcon = styled(FontAwesomeIcon)`
     font-size: 25px;
     padding: 20px 0;
     opacity: 0.3;
+    cursor: pointer;
 `;
 
 const PenIcon = styled(FontAwesomeIcon)`
     font-size: 20px;
     padding: 20px 30px;
     opacity: 0.3;
+    cursor: pointer;
 `;
 
 
@@ -100,12 +102,10 @@ function EmployeeCard({ employee, handleDelete, handleOpen }) {
                         alt="profile pic"/>
                     <div>
                         <Name>{ name }</Name>
-                        <Label>Employee ID:</Label>{'  '}{'  '}<DetailsText>{id}</DetailsText>
+                        <Label>Employee ID:{'  '}{'  '}</Label>
+                        <DetailsText>{id}</DetailsText>
                     </div>
                 </UserHeaderContainer>
-
-
-
                 <IconContainer>
                     <PenIcon 
                         onClick={() => handleOpen()}
@@ -115,8 +115,6 @@ function EmployeeCard({ employee, handleDelete, handleOpen }) {
                         icon={faTimes}/>
                 </IconContainer>
             </UpperContainer>
-
-
             <LowerContainer>
                 <DetailsContainer>
                     <LabelContainer>
@@ -145,8 +143,8 @@ function EmployeeCard({ employee, handleDelete, handleOpen }) {
                 <DetailsContainer>
                     <LabelContainer>
                         <Label>Created: </Label>
-                        </LabelContainer>
-                        <DetailsText>{created}</DetailsText>
+                    </LabelContainer>
+                    <DetailsText>{created}</DetailsText>
                 </DetailsContainer>
                 <DetailsContainer>
                     <LabelContainer>

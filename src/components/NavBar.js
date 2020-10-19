@@ -46,7 +46,7 @@ const Button = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    `;
+`;
     
 const ButtonText = styled.p`
     color: #5851EA;
@@ -57,8 +57,8 @@ const StyledLink = styled(Link)`
 `;
 
 const SmallMenuContainer = styled.div`
-@media (max-width: 800px) {
-    margin: 0 50px;
+    @media (max-width: 800px) {
+        margin: 0 50px;
     };
     @media (min-width: 800px) {
         display: none;
@@ -69,7 +69,7 @@ const Logo = styled.img`
     height: 34px;
     @media (max-width: 1050px) {
         margin-left: 50px;
-    }
+    };
     @media (min-width: 1050px) {
         margin-left: 280px;
     };
@@ -83,22 +83,47 @@ function NavBar({ home }) {
                 src="/images/logo.png" 
                 alt="logo" />
                 <SmallMenuContainer>
-                    <StyledLink to="/"><SmallLinkText><FontAwesomeIcon icon={faAngleRight}/> Home</SmallLinkText></StyledLink>
-                    <StyledLink to="/team"><SmallLinkText><FontAwesomeIcon icon={faAngleRight}/> Team</SmallLinkText></StyledLink>
-                    <StyledLink to="/newemployee"><SmallLinkText><FontAwesomeIcon icon={faAngleRight}/> New Employee</SmallLinkText></StyledLink>
+                    <StyledLink to="/">
+                        <SmallLinkText>
+                            <FontAwesomeIcon icon={faAngleRight}/>
+                             Home
+                        </SmallLinkText>
+                    </StyledLink>
+                    <StyledLink to="/team">
+                        <SmallLinkText>
+                            <FontAwesomeIcon icon={faAngleRight}/> 
+                            Team
+                        </SmallLinkText>
+                    </StyledLink>
+                    <StyledLink to="/newemployee">
+                        <SmallLinkText>
+                            <FontAwesomeIcon icon={faAngleRight}/> 
+                            New Employee
+                        </SmallLinkText>
+                    </StyledLink>
                 </SmallMenuContainer>
             { home ? (
                 <LinksContainer home={home}>
                     <LinkText selected >Home</LinkText>
                     <LinkText>Absences</LinkText>
-                    <StyledLink to="/team"><LinkText>Employees</LinkText></StyledLink>
+                    <StyledLink to="/team">
+                        <LinkText>Employees</LinkText>
+                    </StyledLink>
                 </LinksContainer>
             ) : (
             <LinksContainer home={home}>
-                <StyledLink to="/"><LinkText>Home</LinkText></StyledLink>
+                <StyledLink to="/">
+                    <LinkText>Home</LinkText>
+                </StyledLink>
                 <LinkText>Absences</LinkText>
-                <StyledLink to="/team"><LinkText selected>Employees</LinkText></StyledLink>
-                <Button><StyledLink to="/newemployee"><ButtonText>New Employee</ButtonText></StyledLink></Button>
+                <StyledLink to="/team">
+                    <LinkText selected>Employees</LinkText>
+                </StyledLink>
+                <Button>
+                    <StyledLink to="/newemployee">
+                        <ButtonText>New Employee</ButtonText>
+                    </StyledLink>
+                </Button>
             </LinksContainer>
             )}
         </Container>
