@@ -64,7 +64,6 @@ const CreditsContainer = styled.div`
     top: 72%;
     display: flex;
     justify-content: center;
-    border: 1px red solid;
 
 `;
 
