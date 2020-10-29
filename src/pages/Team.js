@@ -85,6 +85,7 @@ function Team() {
                 <CardsContainer>
                     {employees.map(el => (
                         <EmployeeCard 
+                            data-test="employee-card"
                             key={el.id}
                             employee={el}
                             handleOpen={() => {
